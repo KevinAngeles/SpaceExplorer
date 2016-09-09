@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Space Explorer</title>
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js" type="text/javascript"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<!-- Firebase -->
+		<script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+		<!-- Custom Style -->
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<script src="assets/js/code.js" type="text/javascript"></script>
+	<head>
+	<body>
+		<div id="myModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Oopss!</h4>
+					</div>
+					<div class="modal-body">
+						<p>Be Careful.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">Space Explorer</h3>
+						</div>
+						<div class="panel-body">
+							<div id="presenceDiv"></div>
+							<form class="form-horizontal" role="form">
+								<div class="form-group">
+									<label for="">Select Rover</label>
+									<select id="roverSelect" class="form-control"></select>
+								</div>
+								<div class="form-group">
+									<label for="">Select Camera</label>
+									<select id="cameraSelect" class="form-control"></select>
+								</div>
+								<div class="form-group">
+									<label for="inputDate" class="col-sm-3 control-label">Earth Date:</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="inputDate" placeholder="YYYY-MM-DD" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputSol" class="col-sm-3 control-label">Sol:</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="inputSol" placeholder="1000" />
+									</div>
+								<div class="form-group">
+									<div class="col-sm-8 col-sm-offset-2 text-center">
+										<button id="send" type="submit" class="btn btn-primary">Get Photos</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
