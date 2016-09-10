@@ -1,4 +1,5 @@
 $(document).on("ready",function(){
+
 	/*Background Image API Call*/
 		$.ajax({
 			url: "https://api.nasa.gov/planetary/apod?api_key=qVFWydcClpA2utQfaZBW0s0R70S0XQvDyh59Y2Jh",
@@ -13,7 +14,7 @@ $(document).on("ready",function(){
 		}).fail(function(err){
 			console.log(err);
 		});	
-/*End code Background Image*/
+	/*End code Background Image*/
 
 	var rovers = ["curiosity","opportunity","spirit"];
 
@@ -70,9 +71,18 @@ $(document).on("ready",function(){
 		var dataObj = {api_key:nasaApiKey};
 
 		//MODIFY HERE!!!!
+		// we need to put in input validation statements here!!!!
+		// Curiosity landed 080520112
+		// Oppurtunity landed 06062005 - present
+		// Spirit landed 
+		var earthDate = $("#inputDate").val().trim();
 		var earthDateSelected = false;
-		var earthDate = ""
-		var sol = 1000;
+
+		if (earthDate.length > 0) {
+			var earthDateSelected = true;
+		}
+
+		var sol = $("#inputSol").val().trim();
 		//END MODIFY
 
 		if( cameraId.toLowerCase() !== "all" )
@@ -95,14 +105,15 @@ $(document).on("ready",function(){
 			method: "GET",
 			data: dataObj
 		}).done(function(res){
+
 			//MODIFY HERE TOO!!
 			console.log(res);
 			$("#pics").empty();
 			var roverPics = res.photos;
-			// console.log(roverPics.length);
+			console.log(roverPics.length);
 
-			for (i =0; i < 5; i++) {
-				// console.log(roverPics[i].img_src);
+			for (i =0; i < roverPics.length; i++) {
+				console.log(roverPics[i].img_src);
 				var roverPic = $("<img>");
 				roverPic.attr('src', roverPics[i].img_src);
 				$("#pics").append(roverPic);
