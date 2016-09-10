@@ -1,8 +1,24 @@
 $(document).on("ready",function(){
-	var rovers = ["curiousity","opportunity","spirit"];
+	/*Background Image API Call*/
+		$.ajax({
+			url: "https://api.nasa.gov/planetary/apod?api_key=qVFWydcClpA2utQfaZBW0s0R70S0XQvDyh59Y2Jh",
+			method: "GET"
+		}).done(function(res){
+		
+		var imageUrl = res.hdurl
+		$('html').css('background-image', 'url("' + imageUrl + '")');
+			
+			console.log(res);
+			//END MODIFY
+		}).fail(function(err){
+			console.log(err);
+		});	
+/*End code Background Image*/
+
+	var rovers = ["curiosity","opportunity","spirit"];
 
 	var cameras = {
-		curiousity:[
+		curiosity:[
 			{id: "FHAZ", name: "Front Hazard Avoidance Camera"},
 			{id: "RHAZ", name: "Rear Hazard Avoidance Camera"},
 			{id: "MAST", name: "Mast Camera"},
@@ -50,7 +66,9 @@ $(document).on("ready",function(){
 		var roverId = $(roverHtmlSelector).find('option:selected').val();
 		var cameraId = $(cameraHtmlSelector).find('option:selected').val();
 		var nasaUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/"+roverId+"/photos";
+		// var nasaUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos";
 		var dataObj = {api_key:nasaApiKey};
+
 		//MODIFY HERE!!!!
 		var earthDateSelected = false;
 		var earthDate = ""
@@ -79,6 +97,18 @@ $(document).on("ready",function(){
 		}).done(function(res){
 			//MODIFY HERE TOO!!
 			console.log(res);
+			$("#pics").empty();
+			var roverPics = res.photos;
+			// console.log(roverPics.length);
+
+			for (i =0; i < 5; i++) {
+				// console.log(roverPics[i].img_src);
+				var roverPic = $("<img>");
+				roverPic.attr('src', roverPics[i].img_src);
+				$("#pics").append(roverPic);
+			}
+
+
 			//END MODIFY
 		}).fail(function(err){
 			console.log(err);
