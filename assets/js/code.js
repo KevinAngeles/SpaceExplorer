@@ -16,10 +16,10 @@ $(document).on("ready",function(){
 		});	
 	/*End code Background Image*/
 
-	var rovers = ["curiosity","opportunity","spirit"];
+	var rovers = ["Curiosity","Opportunity","Spirit"];
 
 	var cameras = {
-		curiosity:[
+		Curiosity:[
 			{id: "FHAZ", name: "Front Hazard Avoidance Camera"},
 			{id: "RHAZ", name: "Rear Hazard Avoidance Camera"},
 			{id: "MAST", name: "Mast Camera"},
@@ -28,14 +28,14 @@ $(document).on("ready",function(){
 			{id: "MARDI", name: "Mars Descent Imager"},
 			{id: "NAVCAM", name: "Navigation Camera"}
 		],
-		opportunity:[
+		Opportunity:[
 			{id: "FHAZ", name: "Front Hazard Avoidance Camera"},
 			{id: "RHAZ", name: "Rear Hazard Avoidance Camera"},
 			{id: "NAVCAM", name: "Navigation Camera"},
 			{id: "PANCAM", name: "Panoramic Camera"},
 			{id: "MINITES", name: "Miniature Thermal Emission Spectrometer (Mini-TES)"}
 		],
-		spirit:[
+		Spirit:[
 			{id: "FHAZ", name: "Front Hazard Avoidance Camera"},
 			{id: "RHAZ", name: "Rear Hazard Avoidance Camera"},
 			{id: "NAVCAM", name: "Navigation Camera"},
