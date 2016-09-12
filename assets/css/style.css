@@ -1,13 +1,18 @@
-body{
-	background-color: transparent;
+body {
+    background-color: transparent;
 }
-html{
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center;
-	background-color: black;
+
+html {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: black;
 }
-.container{
-	margin-top: 25px;
-	opacity: .8;
+
+.container {
+    margin-top: 25px;
+    opacity: .8;
+}
+#pics{
+	text-align: center;
 }
