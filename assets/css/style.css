@@ -8,7 +8,10 @@ html {
     background-position: center;
     background-color: black;
 }
+nav {
+	opacity: .8;
 
+}
 .container {
     margin-top: 125px;
     opacity: .8;
