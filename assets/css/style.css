@@ -1,4 +1,24 @@
+
+body {
+    background-color: transparent;
+}
+
+html {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: black;
+}
+
+.container {
+    margin-top: 125px;
+    opacity: .8;
+}
+.form-group{
+	padding: 0 15px 0 15px;
+}
+
 #pics {
-	display: table-cell; 
-	vertical-align: middle;
+    text-align: center;
+
 }
