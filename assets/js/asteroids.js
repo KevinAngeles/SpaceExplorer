@@ -1,5 +1,24 @@
 
-  
+
+//AJAX Call for Picture of the day
+    $.ajax({
+        url: "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=Asteroid&callback=?",
+        method: "GET",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+
+    }).done(function(res) {
+    //Adds Picture of the Day to the background of Project
+        var summaryURL = res['query']['pages']['791']['extract'];
+        $('#summary').append(summaryURL);
+
+        console.log(res);
+
+    }).fail(function(err) {
+        console.log(err);
+    });
+    //End code Background Image Code
+
 var nasaApiKey = "&api_key=qVFWydcClpA2utQfaZBW0s0R70S0XQvDyh59Y2Jh";
 var startUrl = "https://api.nasa.gov/neo/rest/v1/feed?start_date=";
 var endUrl = "&end_date=";
@@ -41,6 +60,26 @@ $.ajax({
 
       $(".go").append(output);
   });
+
+//AJAX Call for Picture of the day
+    $.ajax({
+        url: "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=Earth-grazing_fireball&callback=?",
+        method: "GET",
+        contentType: "application/json; charset=utf-8",
+        async: false,
+        dataType: "json",
+
+    }).done(function(res) {
+    //Adds Picture of the Day to the background of Project
+        var summaryURL = res['query']['pages']['28605823']['extract'];
+        $('#summary').append(summaryURL);
+
+        console.log(res);
+
+    }).fail(function(err) {
+        console.log(err);
+    });
+    //End code Background Image Code
 
 });
 
