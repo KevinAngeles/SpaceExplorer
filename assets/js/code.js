@@ -47,7 +47,9 @@ $(document).on("ready", function() {
 
     var roverHtmlSelector = "#roverSelect";
     var cameraHtmlSelector = "#cameraSelect";
+    var radioDateHtmlSelector = ".radioDate";
     var nasaApiKey = "qVFWydcClpA2utQfaZBW0s0R70S0XQvDyh59Y2Jh";
+    var earthDateSelected = false;
 
     rovers.forEach(function(r) {
         $(roverHtmlSelector).append($("<option value='" + r + "'>" + r + "</option>"));
@@ -60,6 +62,28 @@ $(document).on("ready", function() {
         //Setting currently changed option value to roverId variable
         var roverId = $(this).find('option:selected').val();
         updateCameras(cameraHtmlSelector, roverId, cameras);
+    });
+
+    $(radioDateHtmlSelector).on("change", function(ev) {
+        //Disable an input depending on the date selected
+        var radioId = "#"+$(this).attr("id");
+        var earthDateHtmlSelector = "#earthDate";
+        var marsDateHtmlSelector = "#marsDate";
+        var inputDate = "#inputDate";
+        var inputSol = "#inputSol";
+
+        if(radioId === earthDateHtmlSelector)
+        {
+            earthDateSelected = true;
+            $(inputDate).prop("disabled",false);
+            $(inputSol).prop("disabled",true);
+        }
+        else
+        {
+            earthDateSelected = false;
+            $(inputDate).prop("disabled",true);
+            $(inputSol).prop("disabled",false);
+        }
     });
 
     $("#send").on("click", function(ev) {
@@ -76,7 +100,6 @@ $(document).on("ready", function() {
         // Oppurtunity landed 06062005 - present
         // Spirit landed 
         var earthDate = $("#inputDate").val().trim();
-        var earthDateSelected = false;
 
         if (earthDate.length > 0) {
             var earthDateSelected = true;

@@ -72,15 +72,15 @@
                                         <select id="cameraSelect" class="form-control"></select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputDate" class="col-sm-3 control-label">Earth Date:</label>
+                                        <label for="inputDate" class="col-sm-3 control-label"><input type="radio" id="earthDate" class="radioDate" name="radioDate" checked="true">Earth Date:</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="inputDate" placeholder="YYYY-MM-DD" />
+                                            <input type="text" class="form-control" id="inputDate" placeholder="YYYY-MM-DD" disable="false"/>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputSol" class="col-sm-3 control-label">Sol:</label>
+                                        <label for="inputSol" class="col-sm-3 control-label"><input type="radio" id="marsDate" class="radioDate" name="radioDate">Sol:</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" id="inputSol" placeholder="1000" />
+                                            <input type="text" class="form-control" id="inputSol" placeholder="1000" disabled="true" />
                                         </div>
                                         <div class="form-group">
                                             <div class="col-sm-8 col-sm-offset-2 text-center">
