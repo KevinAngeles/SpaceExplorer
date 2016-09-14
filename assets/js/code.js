@@ -64,13 +64,14 @@ $(document).on("ready", function() {
         updateCameras(cameraHtmlSelector, roverId, cameras);
     });
 
+    var earthDateHtmlSelector = "#earthDate";
+    var marsDateHtmlSelector = "#marsDate";
+    var inputDate = "#inputDate";
+    var inputSol = "#inputSol";
+
     $(radioDateHtmlSelector).on("change", function(ev) {
         //Disable an input depending on the date selected
         var radioId = "#"+$(this).attr("id");
-        var earthDateHtmlSelector = "#earthDate";
-        var marsDateHtmlSelector = "#marsDate";
-        var inputDate = "#inputDate";
-        var inputSol = "#inputSol";
 
         if(radioId === earthDateHtmlSelector)
         {
@@ -99,22 +100,24 @@ $(document).on("ready", function() {
         // Curiosity landed 080520112
         // Oppurtunity landed 06062005 - present
         // Spirit landed 
-        var earthDate = $("#inputDate").val().trim();
 
-        if (earthDate.length > 0) {
-            var earthDateSelected = true;
-        }
-
-        var sol = $("#inputSol").val().trim();
         //END MODIFY
 
-        if (cameraId.toLowerCase() !== "all") {
+        if( cameraId.toLowerCase() !== "all" )
+        {
             dataObj["camera"] = cameraId;
         }
 
-        if (earthDateSelected) {
+        if( earthDateSelected )
+        {
+            var selectedDate = $(earthDateHtmlSelector).val().trim();
+            //ADD A VALIDATION HERE!!!
             dataObj["earth_date"] = earthDate;
-        } else {
+        }
+        else
+        {
+            var selectedDate = $(marsDateHtmlSelector).val().trim();            
+            //ADD A VALIDATION HERE!!!
             dataObj["sol"] = parseInt(sol);
         }
 
@@ -124,7 +127,6 @@ $(document).on("ready", function() {
             method: "GET",
             data: dataObj
         }).done(function(res) {
-
             //MODIFY HERE TOO!!
             console.log(res);
             $("#pics").empty();
@@ -137,8 +139,6 @@ $(document).on("ready", function() {
                 roverPic.attr('src', roverPics[i].img_src);
                 $("#pics").append(roverPic);
             }
-
-
             //END MODIFY
         }).fail(function(err) {
             console.log(err);
