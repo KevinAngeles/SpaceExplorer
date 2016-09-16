@@ -61,26 +61,6 @@ $.ajax({
       $(".go").append(output);
   });
 
-//AJAX Call for Picture of the day
-    $.ajax({
-        url: "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=Earth-grazing_fireball&callback=?",
-        method: "GET",
-        contentType: "application/json; charset=utf-8",
-        async: false,
-        dataType: "json",
-
-    }).done(function(res) {
-    //Adds Picture of the Day to the background of Project
-        var summaryURL = res['query']['pages']['28605823']['extract'];
-        $('#summary').append(summaryURL);
-
-        console.log(res);
-
-    }).fail(function(err) {
-        console.log(err);
-    });
-    //End code Background Image Code
-
 });
 
 
