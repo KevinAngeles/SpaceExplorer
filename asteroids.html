@@ -8,12 +8,18 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<!-- Optional theme -->
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
-		<style type="text/css">
-			/*html
-			{
-				background-color: black;
-			}*/
-		</style>
+    <style type="text/css">
+    body {
+    background-image: url("assets/images/NEO.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: black;
+    }
+    nav {
+	opacity: .8;
+}
+    </style>
 	</head>
 	<body>
 		<nav class="navbar navbar-default">
@@ -28,6 +34,8 @@
 					<li><a href="roverinfo.html">Home <span class="sr-only">(current)</span></a></li>
 					<li><a href="index.html">Rover Images</a></li>
 					<li class="active"><a href="asteroids.html">Asteroid Watch</a></li>
+					<li><a href="https://api.nasa.gov/">Nasa API</a></li>
+					<li><a href="https://www.mediawiki.org/wiki/API:Main_page">Wikipedia API</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</nav>
@@ -39,9 +47,6 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6">
-					<img src='assets/images/NEO.jpg' width="100%" height="100%" class="img-responsive" />
-				</div>
 				<div class="col-md  -6   go">
 					<input type="text" name="start" id="start" placeholder="YYYY-MM-DD">
 					<button type="button" class="btn-danger" id="send">Press</button>
