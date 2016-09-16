@@ -8,7 +8,6 @@ $(document).on("ready", function() {
 	//Adds Picture of the Day to the background of Project
 		var imageUrl = res.hdurl
 		$('html').css('background-image', 'url("' + imageUrl + '")');
-
 		console.log(res);
 
 	}).fail(function(err) {
