@@ -1,5 +1,14 @@
+@font-face {
+    font-family: "forgottenRegular";
+    src: url("../fonts/forgottenfuturistrg.otf");
+}
+@font-face {
+    font-family: "forgottenItalics";
+    src: url("../fonts/forgottenfuturistrgit.otf");
+}
 body {
     background-color: transparent;
+    font-family: 'forgottenRegular';
 }
 
 html {
@@ -7,6 +16,7 @@ html {
     background-attachment: fixed;
     background-position: center;
     background-color: black;
+
 }
 
 nav {
