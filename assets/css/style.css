@@ -39,5 +39,11 @@ nav {
     background-color: white;
     opacity: .8;
     width: 90%;
-    margin: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 30px;
+}
+#roverSummary2{
+    background-color: white;
+    opacity: .8;
+    width: 90%;
+    margin: 10px 10px 10px 60px
 }
