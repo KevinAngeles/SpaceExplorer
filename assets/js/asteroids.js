@@ -68,7 +68,7 @@ $(document).on("ready", function() {
 			var output = "<br><br>On " + newDate + " the nearest asteroid, NASA ID: " + neoName + ", missed Earth by " 
 			  + numberWithCommas(proximity) + " miles, was moving at a velocity of " + numberWithCommas(Math.round(velocity)) 
 			  + " miles/hour and had an approximate maximum diameter of " + numberWithCommas(Math.round(diameter)) + " feet.";
-			var moreInfo = "<br><div><a href=" +neoLink + ">Would you like to know more?</a></div>";
+			var moreInfo = "<br><div><a target ='_blank' href=" +neoLink + ">Would you like to know more?</a></div>";
 			$(".go").append(output);
 			$(".go").append(moreInfo);
 		});
