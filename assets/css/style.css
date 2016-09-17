@@ -1,49 +1,59 @@
 @font-face {
-    font-family: "forgottenRegular";
-    src: url("../fonts/forgottenfuturistrg.otf");
+	font-family: "forgottenRegular";
+	src: url("../fonts/forgottenfuturistrg.otf");
 }
 @font-face {
-    font-family: "forgottenItalics";
-    src: url("../fonts/forgottenfuturistrgit.otf");
+	font-family: "forgottenItalics";
+	src: url("../fonts/forgottenfuturistrgit.otf");
 }
 body {
-    background-color: transparent;
-    font-family: 'forgottenRegular';
+	background-color: transparent;
+	font-family: 'forgottenRegular';
 }
 
 html {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-color: black;
-
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-color: black;
 }
 
 nav {
-    opacity: .8;
+	opacity: .8;
+}
+
+.bot {
+	margin-bottom: 10px;
 }
 
 .container {
-    margin-top: 125px;
-    opacity: .8;
+	margin-top: 125px;
 }
 
 .form-group {
-    padding: 0 15px 0 15px;
+	padding: 0 15px 0 15px;
+}
+
+.opacity {
+	opacity: 0.8;
+}
+
+.pad {
+	padding: 20px;
 }
 
 #pics {
-    text-align: center;
+	text-align: center;
 }
 #roverSummary{
-    background-color: white;
-    opacity: .8;
-    width: 90%;
-    margin: 10px 10px 10px 30px;
+	background-color: white;
+	/*margin: 10px 10px 10px 30px;*/
+	opacity: .8;
+	/*width: 90%;*/
 }
 #roverSummary2{
-    background-color: white;
-    opacity: .8;
-    width: 90%;
-    margin: 10px 10px 10px 60px
+	background-color: white;
+	/*margin: 10px 10px 10px 60px*/
+	opacity: .8;
+	/*width: 90%;*/
 }
