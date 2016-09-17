@@ -27,7 +27,7 @@ nav {
 }
 
 .container {
-	margin-top: 125px;
+	margin-top: 25px;
 }
 
 .form-group {
@@ -45,15 +45,38 @@ nav {
 #pics {
 	text-align: center;
 }
-#roverSummary{
+.roverSummary{
 	background-color: white;
 	/*margin: 10px 10px 10px 30px;*/
 	opacity: .8;
 	/*width: 90%;*/
 }
-#roverSummary2{
-	background-color: white;
-	/*margin: 10px 10px 10px 60px*/
-	opacity: .8;
-	/*width: 90%;*/
+#indexHeader{
+	font-size: 68px;
+	color: black;
+  	text-shadow:
+   	-.5px -.5px 0 white,  
+    .5px -.5px 0 white,
+    -.5px .5px 0 white,
+    .5px .5px 0 white;
+}
+#roverHeader{
+	margin: 15px 0 50px 300px;
+	font-size: 68px;
+	color: black;
+  	text-shadow:
+   	-.5px -.5px 0 white,  
+    .5px -.5px 0 white,
+    -.5px .5px 0 white,
+    .5px .5px 0 white;
+}
+#about{
+	margin: 50px 0 0 300px;
+	font-size: 68px;
+	color: black;
+  	text-shadow:
+   	-.5px -.5px 0 white,  
+    .5px -.5px 0 white,
+    -.5px .5px 0 white,
+    .5px .5px 0 white;
 }
