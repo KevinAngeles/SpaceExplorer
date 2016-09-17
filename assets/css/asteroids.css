@@ -1,0 +1,31 @@
+@font-face {
+	font-family: "forgottenRegular";
+	src: url("../fonts/forgottenfuturistrg.otf");
+}
+@font-face {
+	font-family: "forgottenItalics";
+	src: url("../fonts/forgottenfuturistrgit.otf");
+}
+body {
+	background-attachment: fixed;
+	background-color: black;
+	background-image: url("../images/NEO.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	font-family: 'forgottenRegular';
+}
+nav {
+	opacity: .8;
+}
+.summaryParagraph {
+	background-color: white;
+	opacity: .8;
+}
+.sumaryRow {
+	background-color: white;
+	margin-top: 20px;
+	opacity: .8;
+}
+#asteroidWatch {
+	margin: 0 0 10px 15px;
+}

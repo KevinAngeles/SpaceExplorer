@@ -7,8 +7,6 @@ $(document).on("ready", function() {
 	//Adds Picture of the Day to the background of Project
 		var imageUrl = res.hdurl
 		$('html').css('background-image', 'url("' + imageUrl + '")');
-		console.log(res);
-
 	}).fail(function(err) {
 		console.log(err);
 	});
@@ -125,13 +123,10 @@ $(document).on("ready", function() {
 			data: dataObj
 		}).done(function(res) {
 			//MODIFY HERE TOO!!
-			console.log(res);
 			$("#pics").empty();
 			var roverPics = res.photos;
-			console.log(roverPics.length);
 
 			for (i = 0; i < roverPics.length; i++) {
-				console.log(roverPics[i].img_src);
 				var roverPic = $("<img>");
 				roverPic.attr('src', roverPics[i].img_src);
 				$("#pics").append(roverPic);
