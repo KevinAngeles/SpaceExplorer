@@ -24,9 +24,15 @@ $(document).on("ready", function() {
 		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 
+	var inputDate = "#start";
+	$(inputDate).datepicker({
+		dateFormat: 'yy-mm-dd'
+	});
+
 	$("#btnClear").on('click', function() {
 		$("#result").html("");
 	});
+
 	$("#btnSend").on('click', function() {
 		var start = $("#start").val().trim();
 		var nasaUrl = startUrl + start + endUrl + start + finalUrl;

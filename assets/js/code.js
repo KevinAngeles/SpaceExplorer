@@ -82,6 +82,10 @@ $(document).on("ready", function() {
 		}
 	});
 
+	$(inputDate).datepicker({
+		dateFormat: 'yy-mm-dd'
+	});
+
 	$("#send").on("click", function(ev) {
 		ev.preventDefault();
 		var roverId = $(roverHtmlSelector).find('option:selected').val();
