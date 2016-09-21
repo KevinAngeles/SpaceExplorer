@@ -70,7 +70,9 @@ $(document).on("ready", function() {
 	});
 
 	$(inputDate).datepicker({
-		dateFormat: 'yy-mm-dd'
+		dateFormat: 'yy-mm-dd',
+		minDate: new Date(2004,0,04),
+		maxDate: new Date()
 	});
 
 	$("#send").on("click", function(ev) {

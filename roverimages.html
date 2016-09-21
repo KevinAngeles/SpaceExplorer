@@ -48,9 +48,10 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
-					<li class="active"><a href="roverinfo.html">Rover Images</a></li>
+					<li class="active"><a href="roverimages.html">Rover Images</a></li>
 					<li><a href="asteroids.html">Asteroid Watch</a></li>
 					<li><a href="aboutProject.html">Project Info</a></li>
+					<li><a href="pod.html">NASA Picture of the Day</a></li>
 					<li><a href="https://api.nasa.gov/" id="nasaLink" target="_blank">Nasa API</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
@@ -59,7 +60,7 @@
 		<div class="container">
 		<h1 id="roverHeader">Rover Camera Viewer</h1>
 			<div class="row">			
-				<div class="col-sm-12 col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2 opacity">   
+				<div class="col-sm-12 col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2 opacity height">   
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<h3 class="panel-title">Space Explorer</h3>
@@ -68,7 +69,7 @@
 						<div class="panel-body">
 							<div id="presenceDiv"></div>
 							<form class="form-horizontal" role="form">
-								<div id="imageDiv"> 
+								<div id="imageDiv" class="text-center"> 
 									<img id="cur" src="assets/images/curiosity.jpg" height="150" width="150">
 								</div>
 								<div class="form-group">
@@ -90,7 +91,7 @@
 									<div class="col-sm-9">
 										<input type="text" class="form-control" id="inputSol" placeholder="1000" disabled="true" />
 									</div>
-									<div class="form-group">
+									<div class="form-group" id="getPhotosButton">
 										<div class="col-sm-8 col-sm-offset-2 text-center">
 											<button id="send" type="submit" class="btn btn-primary">Get Photos</button>
 										</div>
