@@ -145,6 +145,7 @@ $(document).on("ready", function() {
 			//append an option to the select with an available cameras
 			$(cameraHtmlSelector).append($("<option value='" + c.id + "'>" + c.name + "</option>"));
 		});
+		$("#imageDiv").html("<img id='cur' src='assets/images/"+roverId+".jpg' height='150' width='150'>");
 	}
 	/* End Update Cameras */
 });
