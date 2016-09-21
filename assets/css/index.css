@@ -1,7 +1,7 @@
 html {
-	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-position: center;
 	background-color: black;
-	background-image: url("assets/images/marsbackground.jpg");
+	background-image: url("../images/marsbackground.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
 }
