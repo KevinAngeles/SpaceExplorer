@@ -152,7 +152,8 @@ $(document).on("ready", function() {
 		$.ajax({
 			url: nasaUrl,
 			method: "GET",
-			crossDomain: true,
+			contentType: "application/json; charset=utf-8",
+			dataType: "json"
 			data: dataObj
 		}).done(function(res) {
 			//MODIFY HERE TOO!!
