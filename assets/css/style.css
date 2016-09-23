@@ -50,6 +50,7 @@ nav {
 	/*margin: 10px 10px 10px 30px;*/
 	opacity: .8;
 	/*width: 90%;*/
+	padding: 10px 10px 10px 10px;
 }
 #indexHeader{
 	font-size: 68px;
@@ -61,7 +62,7 @@ nav {
     .5px .5px 0 white;
 }
 #roverHeader{
-	margin: 0 0 0 290px;
+	margin: 0 0 25px 290px;
 	font-size: 68px;
 	color: black;
   	text-shadow:
@@ -71,7 +72,7 @@ nav {
     .5px .5px 0 white;
 }
 #aboutHeader{
-	margin: 0px 5px 0;
+	margin: 0px 5px 25px 0;
 	font-size: 68px;
 	color: black;
   	text-shadow:
@@ -82,4 +83,8 @@ nav {
 }
 #getPhotosButton{
 	margin-top: 50px;
+}
+#aboutPage{
+	font-size: 28px;
+	padding: 5px 5px 5px 5px;
 }
