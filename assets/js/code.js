@@ -136,8 +136,10 @@ $(document).on("ready", function() {
 		if( earthDateSelected )
 		{
 			var selectedDate = $(inputDate).val().trim();
+			var arrDate = selectedDate.split("-");
+			var correctedDate = parseInt(arrDate[0])+"-"+parseInt(arrDate[1])+"-"+parseInt(arrDate[2]);
 			//ADD A VALIDATION HERE!!!
-			dataObj["earth_date"] = selectedDate;
+			dataObj["earth_date"] = correctedDate;
 		}
 		else
 		{
@@ -154,12 +156,24 @@ $(document).on("ready", function() {
 		}).done(function(res) {
 			//MODIFY HERE TOO!!
 			$("#pics").empty();
+			var picshtml = $("<ul class='rslides' id='roverPics'></ul>");
+			$("#pics").append(picshtml);
 			var roverPics = res.photos;
-			for (i = 0; i < roverPics.length; i++) {
-				var roverPic = $("<img>");
-				roverPic.attr('src', roverPics[i].img_src);
-				$("#pics").append(roverPic);
+			//$("#pics").append($("<ul id='roverPics-pager'></ul>"));
+			for (i = 0; i < roverPics.length; i++)
+			{
+				var roverLi = $("<li><a href='#'><img src='"+roverPics[i].img_src+"'></a></li>");
+				$("#roverPics").append(roverLi);
+				//$("#roverPics-pager").append(roverLi);
 			}
+
+			$("#roverPics").responsiveSlides({
+				auto: false,
+				pager: true,
+				speed: 300,
+				maxwidth: 800
+				//manualControls: '#roverPics-pager'
+			});
 			//END MODIFY
 		}).fail(function(err) {
 			console.log(err);

@@ -1,0 +1,53 @@
+/*! http://responsiveslides.com v1.55 by @viljamis */
+@font-face {
+	font-family: "forgottenRegular";
+	src: url("../fonts/forgottenfuturistrg.otf");
+}
+
+.rslides {
+	display: inline-block;
+	position: relative;
+	list-style: none;
+	overflow: hidden;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.rslides li {
+	-webkit-backface-visibility: hidden;
+	position: absolute;
+	display: none;
+	width: 100%;
+	left: 0;
+	top: 0;
+	border: 2px #FFF solid;
+}
+
+.rslides li:first-child {
+	position: relative;
+	display: block;
+	float: left;
+}
+
+.rslides img {
+	display: block;
+	height: auto;
+	float: left;
+	width: 100%;
+	border: 0;
+}
+
+ul.rslides_tabs {
+	padding-left: 0;
+}
+
+ul.rslides_tabs li {
+	display: inline-block;
+	margin: 5px;
+}
+
+ul.rslides_tabs li a {
+	color: #FFF;
+	font-family: 'forgottenRegular';
+}
