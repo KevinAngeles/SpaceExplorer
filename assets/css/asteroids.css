@@ -18,12 +18,8 @@ nav {
 	opacity: .8;
 }
 .summaryParagraph {
+	padding: 5px 5px 5px 5px;
 	background-color: white;
-	opacity: .8;
-}
-.sumaryRow {
-	background-color: white;
-	margin-top: 20px;
 	opacity: .8;
 }
 #asteroidWatch {

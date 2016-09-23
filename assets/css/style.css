@@ -46,11 +46,20 @@ nav {
 	text-align: center;
 }
 .roverSummary{
-	background-color: white;
-	/*margin: 10px 10px 10px 30px;*/
-	opacity: .8;
-	/*width: 90%;*/
+	/*width: 700px;*/
+	/*margin-left: 225px;*/
+	font-size: 14px;
 	padding: 10px 10px 10px 10px;
+	background-color: white;
+	opacity: .8;
+}
+.aboutSummary{
+	width: 700px;
+	margin-left: 225px;
+	font-size: 22px;
+	padding: 10px 10px 10px 10px;
+	background-color: white;
+	opacity: .8;
 }
 #indexHeader{
 	font-size: 68px;
@@ -83,8 +92,4 @@ nav {
 }
 #getPhotosButton{
 	margin-top: 50px;
-}
-#aboutPage{
-	font-size: 28px;
-	padding: 5px 5px 5px 5px;
 }
