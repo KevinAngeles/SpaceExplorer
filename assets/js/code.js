@@ -153,7 +153,7 @@ $(document).on("ready", function() {
 			url: nasaUrl,
 			method: "GET",
 			contentType: "application/json; charset=utf-8",
-			dataType: "json"
+			dataType: "json",
 			data: dataObj
 		}).done(function(res) {
 			//MODIFY HERE TOO!!
