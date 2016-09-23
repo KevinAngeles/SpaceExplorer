@@ -155,7 +155,6 @@ $(document).on("ready", function() {
 			//MODIFY HERE TOO!!
 			$("#pics").empty();
 			var roverPics = res.photos;
-
 			for (i = 0; i < roverPics.length; i++) {
 				var roverPic = $("<img>");
 				roverPic.attr('src', roverPics[i].img_src);
