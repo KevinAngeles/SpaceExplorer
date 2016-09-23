@@ -26,6 +26,44 @@ $(document).on("ready", function() {
 			{ id: "MINITES", name: "Miniature Thermal Emission Spectrometer (Mini-TES)" }
 		]
 	};
+	var roverDates = {
+		Curiosity : {
+			minDate: {
+				currentDate:false,
+				year:2012,
+				month:07,
+				day:06
+			},
+			maxDate:{
+				currentDate:true
+			}
+		},
+    	Opportunity : {
+    		minDate: {
+    			currentDate:false,
+    			year:2004,
+    			month:00,
+    			day:25
+    		},
+    		maxDate:{
+    			currentDate:true
+    		}
+    	},
+    	Spirit : {
+    		minDate: {
+    			currentDate:false,
+    			year:2004,
+    			month:00,
+    			day:04
+    		},
+    		maxDate:{
+    			currentDate:false,
+    			year:2010,
+    			month:02,
+    			day:22
+    		}
+    	}
+	};
 
 	var roverHtmlSelector = "#roverSelect";
 	var cameraHtmlSelector = "#cameraSelect";
@@ -44,6 +82,9 @@ $(document).on("ready", function() {
 		//Setting currently changed option value to roverId variable
 		var roverId = $(this).find('option:selected').val();
 		updateCameras(cameraHtmlSelector, roverId, cameras);
+		var minDate = roverDates[roverId]["minDate"];
+		var maxDate = roverDates[roverId]["maxDate"];
+		updateCalendarDates(inputDate, minDate, maxDate)
 	});
 
 	var earthDateHtmlSelector = "#earthDate";
@@ -69,11 +110,7 @@ $(document).on("ready", function() {
 		}
 	});
 
-	$(inputDate).datepicker({
-		dateFormat: 'yy-mm-dd',
-		minDate: new Date(2004,0,04),
-		maxDate: new Date()
-	});
+	updateCalendarDates(inputDate,roverDates[rover]["minDate"],roverDates[rover]["maxDate"]);
 
 	$("#send").on("click", function(ev) {
 		ev.preventDefault();
@@ -130,6 +167,29 @@ $(document).on("ready", function() {
 		});
 	});
 
+	function updateCalendarDates(calendarHtmlSelector, minDate, maxDate) {
+		var mindt=new Date();
+		var maxdt=new Date();
+		
+		if(!minDate.currentDate)
+		{
+			mindt=new Date(minDate.year,minDate.month,minDate.day);
+		}
+
+		if(!maxDate.currentDate)
+		{
+			maxdt=new Date(maxDate.year,maxDate.month,maxDate.day);
+		}
+
+		$(calendarHtmlSelector).datepicker('destroy');
+
+
+		$(calendarHtmlSelector).datepicker({
+			dateFormat: 'yy-mm-dd',
+			minDate: mindt,
+			maxDate: maxdt
+		});
+	}
 	/* Function Update Cameras */
 	//--------------------------------
 	// cameraHtmlSelector: ID (HTML) of the "<select>" tag of the cameras
