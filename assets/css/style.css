@@ -53,9 +53,7 @@ nav {
 	background-color: white;
 	opacity: .8;
 }
-.aboutSummary{
-	width: 700px;
-	margin-left: 225px;
+#aboutSummary{
 	font-size: 22px;
 	padding: 10px 10px 10px 10px;
 	background-color: white;
@@ -71,7 +69,6 @@ nav {
     .5px .5px 0 white;
 }
 #roverHeader{
-	margin: 0 0 25px 290px;
 	font-size: 68px;
 	color: black;
   	text-shadow:
@@ -81,7 +78,6 @@ nav {
     .5px .5px 0 white;
 }
 #aboutHeader{
-	margin: 0px 5px 25px 0;
 	font-size: 68px;
 	color: black;
   	text-shadow:
