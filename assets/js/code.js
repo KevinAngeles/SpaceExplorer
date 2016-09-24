@@ -91,6 +91,8 @@ $(document).on("ready", function() {
 	var marsDateHtmlSelector = "#marsDate";
 	var inputDate = "#inputDate";
 	var inputSol = "#inputSol";
+	var earthDateErrorDiv = "#earthDateError";
+	var marsDateErrorDiv = "#marsDateError";
 
 	$(radioDateHtmlSelector).on("change", function(ev) {
 		//Disable an input depending on the date selected
@@ -114,11 +116,14 @@ $(document).on("ready", function() {
 
 	$("#send").on("click", function(ev) {
 		ev.preventDefault();
+		var correctInputs = true;
 		var roverId = $(roverHtmlSelector).find('option:selected').val();
 		var cameraId = $(cameraHtmlSelector).find('option:selected').val();
 		var nasaUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/" + roverId + "/photos";
 		// var nasaUrl = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos";
 		var dataObj = { api_key: nasaApiKey };
+
+		var errorMsg = "The date cannot be empty.";
 
 		//MODIFY HERE!!!!
 		// we need to put in input validation statements here!!!!
@@ -136,50 +141,82 @@ $(document).on("ready", function() {
 		if( earthDateSelected )
 		{
 			var selectedDate = $(inputDate).val().trim();
-			var arrDate = selectedDate.split("-");
-			var correctedDate = parseInt(arrDate[0])+"-"+parseInt(arrDate[1])+"-"+parseInt(arrDate[2]);
-			//ADD A VALIDATION HERE!!!
-			dataObj["earth_date"] = correctedDate;
+			if( selectedDate.trim() === "" )
+			{
+				correctInputs = false;
+			}
+			if(correctInputs)
+			{
+				$(marsDateErrorDiv).html("");
+				$(earthDateErrorDiv).html("");
+				var arrDate = selectedDate.split("-");
+				var correctedDate = parseInt(arrDate[0])+"-"+parseInt(arrDate[1])+"-"+parseInt(arrDate[2]);
+				dataObj["earth_date"] = correctedDate;
+			}
+			else
+			{
+				$(marsDateErrorDiv).html("");
+				$(earthDateErrorDiv).html(errorMsg);
+			}
 		}
 		else
 		{
-			var selectedDate = $(inputSol).val().trim();            
-			//ADD A VALIDATION HERE!!!
-			dataObj["sol"] = parseInt(selectedDate);
-		}
-
-		//AJAX Call
-		$.ajax({
-			url: nasaUrl,
-			method: "GET",
-			contentType: "application/json; charset=utf-8",
-			dataType: "json",
-			data: dataObj
-		}).done(function(res) {
-			//MODIFY HERE TOO!!
-			$("#pics").empty();
-			var picshtml = $("<ul class='rslides' id='roverPics'></ul>");
-			$("#pics").append(picshtml);
-			var roverPics = res.photos;
-			//$("#pics").append($("<ul id='roverPics-pager'></ul>"));
-			for (i = 0; i < roverPics.length; i++)
+			var selectedDate = $(inputSol).val().trim();
+			if( selectedDate.trim() === "" )
 			{
-				var roverLi = $("<li><a href='#'><img src='"+roverPics[i].img_src+"'></a></li>");
-				$("#roverPics").append(roverLi);
-				//$("#roverPics-pager").append(roverLi);
+				correctInputs = false;
+			}
+			else if( !/^[0-9]+$/.test(selectedDate) )
+			{
+				correctInputs = false;
+				errorMsg = "The has to be an integer";
 			}
 
-			$("#roverPics").responsiveSlides({
-				auto: false,
-				pager: true,
-				speed: 300,
-				maxwidth: 800
-				//manualControls: '#roverPics-pager'
+			if(correctInputs)
+			{      
+				$(marsDateErrorDiv).html("");
+				$(earthDateErrorDiv).html("");
+				dataObj["sol"] = parseInt(selectedDate);
+			}
+			else
+			{
+				$(marsDateErrorDiv).html(errorMsg);
+				$(earthDateErrorDiv).html("");
+			}
+		}
+
+		if(correctInputs)
+		{
+			$.ajax({
+				url: nasaUrl,
+				method: "GET",
+				contentType: "application/json; charset=utf-8",
+				dataType: "json",
+				data: dataObj
+			}).done(function(res) {
+				$("#pics").empty();
+				var picshtml = $("<ul class='rslides' id='roverPics'></ul>");
+				$("#pics").append(picshtml);
+				var roverPics = res.photos;
+				//$("#pics").append($("<ul id='roverPics-pager'></ul>"));
+				for (i = 0; i < roverPics.length; i++)
+				{
+					var roverLi = $("<li><a href='#'><img src='"+roverPics[i].img_src+"'></a></li>");
+					$("#roverPics").append(roverLi);
+					//$("#roverPics-pager").append(roverLi);
+				}
+
+				$("#roverPics").responsiveSlides({
+					auto: false,
+					pager: true,
+					speed: 300,
+					maxwidth: 800
+					//manualControls: '#roverPics-pager'
+				});
+			}).fail(function(err) {
+				console.log(err);
 			});
-			//END MODIFY
-		}).fail(function(err) {
-			console.log(err);
-		});
+		}
 	});
 
 	function updateCalendarDates(calendarHtmlSelector, minDate, maxDate) {
