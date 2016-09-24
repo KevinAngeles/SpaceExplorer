@@ -1,77 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Space Explorer</title>
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js" type="text/javascript"></script>
+		<!-- Bootstrap CDN-->
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- Custom Style -->
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Space Explorer</title>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" type="text/javascript"></script>
-    <!-- Bootstrap CDN-->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- Custom Style -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
-</head>
-
-<body>
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <div class="btn btn-secondary btn-xs">Menu</div>
-                </button>
-                <a class="navbar-brand">Team Project #1</a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
-                    <li><a href="roverimages.html">Rover Images</a></li>
-                    <li><a href="asteroids.html">Asteroid Watch</a></li>
-                    <li><a href="aboutProject.html">Project Info</a></li>
-                    <li><a href="pod.html">NASA Picture of the Day</a></li>
-                    <li><a href="https://api.nasa.gov/" id="nasaLink" target="_blank">Nasa API</a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-    <div class="container-fluid text-center">
-        <header>
-            <h1 id="indexHeader">Mars Exploration Rovers</h1>
-        </header>
-        <div class="col-sm-6">
-            <div class="row pad">
-                <div class="col-sm-12 bot">
-                    <img src="assets/images/opportunity.jpg" height="210" width="210">
-                </div>
-                <div class="col-sm-12 roverSummary">
-                    <h2>Spirit & Opportunity</h2>
-                    <p>NASA's Mars Exploration Rover Mission (MER) is an ongoing robotic space mission involving two rovers, Spirit and Opportunity. It began in 2003 with the sending of the two rovers, Spirit and Opportunity, to explore the Martian surface and geology. The mission's scientific objective was to search for and characterize Martian geology and soil chemistry that holds clues to past water activity on Mars. Each rover had a planned 90 day sol with each rover far exceeding it's end mission date and continuing to relay data to Earth. Unfortunately, Spirit became stuck in late 2009, and its last communication with Earth was sent on March 22, 2010. On the opposite side of Mars, Opportunity continues to move, gather scientific observations, and report back to Earth, exceeding its designed lifespan almost 50-fold.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="row pad">
-                    <div class="col-sm-12 bot">
-                        <img src="assets/images/curiosity.jpg" height="210" width="210">
-                    </div>
-                    <div class="col-sm-12 roverSummary">
-                        <h2>Curiosity</h2>
-                        <p>Curiosity is a car sized robotic rover that landed on Mars August 6, 2012. It is the largest and most advanced rover sent to Space to date. After traveling over 350,000,000 miles from Earth, Curiosity landed a mere 1.5 miles from it's intended touchdown target. The Curiosity's mission is to investigate the Martian climate and geology, assess if Mars environmental conditions have ever been favorable for microbial life and acquire information regarding the planetary habitability in preparation for future human exploration. As of December 2012, Curiosity's 2-year mission was extended indefinitely and it continues to send home information about the barren Martian landscape. Curiosity comprised 23% of the mass of the 8,583 lb Mars Science Laboratory spacecraft, delivering the rover safely across space from Earth to a soft landing on the surface of Mars.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<div class="btn btn-secondary btn-xs">Menu</div>
+					</button>
+					<a class="navbar-brand">Team Project #1</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+						<li><a href="roverimages.html">Rover Images</a></li>
+						<li><a href="asteroids.html">Asteroid Watch</a></li>
+						<li><a href="aboutProject.html">Project Info</a></li>
+						<li><a href="pod.html">NASA Picture of the Day</a></li>
+						<li><a href="https://api.nasa.gov/" id="nasaLink" target="_blank">Nasa API</a></li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+		<div class="container-fluid text-center">
+			<header>
+				<h1 id="indexHeader">Mars Exploration Rovers</h1>
+			</header>
+			<div class="col-sm-6">
+				<div class="row pad">
+					<div class="col-sm-12 bot">
+						<img src="assets/images/opportunity.jpg" height="210" width="210">
+					</div>
+					<div class="col-sm-12 roverSummary">
+						<h2>Spirit & Opportunity</h2>
+						<p>NASA's Mars Exploration Rover Mission (MER) is an ongoing robotic space mission involving two rovers, Spirit and Opportunity. It began in 2003 with the sending of the two rovers, Spirit and Opportunity, to explore the Martian surface and geology. The mission's scientific objective was to search for and characterize Martian geology and soil chemistry that holds clues to past water activity on Mars. Each rover had a planned 90 day sol with each rover far exceeding it's end mission date and continuing to relay data to Earth. Unfortunately, Spirit became stuck in late 2009, and its last communication with Earth was sent on March 22, 2010. On the opposite side of Mars, Opportunity continues to move, gather scientific observations, and report back to Earth, exceeding its designed lifespan almost 50-fold.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="row pad">
+						<div class="col-sm-12 bot">
+							<img src="assets/images/curiosity.jpg" height="210" width="210">
+						</div>
+						<div class="col-sm-12 roverSummary">
+							<h2>Curiosity</h2>
+							<p>Curiosity is a car sized robotic rover that landed on Mars August 6, 2012. It is the largest and most advanced rover sent to Space to date. After traveling over 350,000,000 miles from Earth, Curiosity landed a mere 1.5 miles from it's intended touchdown target. The Curiosity's mission is to investigate the Martian climate and geology, assess if Mars environmental conditions have ever been favorable for microbial life and acquire information regarding the planetary habitability in preparation for future human exploration. As of December 2012, Curiosity's 2-year mission was extended indefinitely and it continues to send home information about the barren Martian landscape. Curiosity comprised 23% of the mass of the 8,583 lb Mars Science Laboratory spacecraft, delivering the rover safely across space from Earth to a soft landing on the surface of Mars.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
